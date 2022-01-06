@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма</title>
+</head>
+<body>
+<h1>Заповни форму</h1>
+<form action="" method="post" novalidate>
+    <p>
+        {{ form.email.label }}<br>
+        {{ form.email(size=50) }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+</body>
+</html>
